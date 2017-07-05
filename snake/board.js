@@ -9,7 +9,7 @@ class Board {
     if (highScore) {
       this.highScore = highScore;
     } else {
-      this.highScore = 0;
+      this.highScore = 140.85;
     }
     this.dimension = 25;
     this.ration = new Ration(this);

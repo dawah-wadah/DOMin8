@@ -389,12 +389,18 @@ class GameView{
   }
 
   renderGameOver() {
+    const openPlayer = new Audio('assets/efx/metalgeargameov5235.mp3');
+    openPlayer.play();
+    const closePlayer = new Audio('assets/efx/0x57.wav');
     this.gameOverEl.removeClass('hidden');
     this.gameOverEl.on('click', () => {
       this.gameOverEl.addClass('hidden');
       this.board = new __WEBPACK_IMPORTED_MODULE_0__board_js__["a" /* default */](Math.max(this.board.score, this.board.highScore));
       window.clearInterval(this.gameInterval);
       this.gameInterval = window.setInterval( this.step.bind(this), 100);
+      openPlayer.pause();
+      openPlayer.currentTime = 0;
+      closePlayer.play();
     });
   }
 
@@ -432,7 +438,7 @@ class Board {
     if (highScore) {
       this.highScore = highScore;
     } else {
-      this.highScore = 0;
+      this.highScore = 140.85;
     }
     this.dimension = 25;
     this.ration = new __WEBPACK_IMPORTED_MODULE_2__ration_js__["a" /* default */](this);
