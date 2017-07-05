@@ -1,16 +1,16 @@
-const Board = require("./board.js");
-import $l from '../lib/main.js';
+const $w = require("../lib/main.js");
+import Board from './board.js';
 
 class GameView{
   constructor(rootEl) {
     this.rootEl = rootEl;
     this.board = new Board();
     this.grid = this.buildGrid();
-    this.scoreEl = $l('.score');
-    this.highScoreEl = $l('.high-score');
-    this.gameOverEl = $l('.game-over');
+    this.scoreEl = $w('.score');
+    this.highScoreEl = $w('.high-score');
+    this.gameOverEl = $w('.game-over');
     this.restart = this.restart.bind(this);
-    $l(window).on("keydown", this.handleKeyEvent.bind(this));
+    $w(window).on("keydown", this.handleKeyEvent.bind(this));
   }
 
   buildGrid() {
@@ -23,7 +23,7 @@ class GameView{
       rootInnerHTML += "</ul>";
     }
     this.rootEl.html(rootInnerHTML);
-    this.liList = $l("li");
+    this.liList = $w("li");
   }
 
   handleKeyEvent(e) {
@@ -34,13 +34,13 @@ class GameView{
 
   render() {
     this.updateClasses(this.board.snake.segments, "snake");
-    this.updateClasses([this.board.apple.position], "apple");
+    this.updateClasses([this.board.ration.position], "ration");
     this.updateSnakeHead();
     this.updateScore();
   }
 
   updateClasses(coords, className) {
-    $l(`.${className}`).removeClass(className);
+    $w(`.${className}`).removeClass(className);
     if (coords) {
       coords.forEach( coord => {
         const flatCoord = (coord.x * this.board.dimension) + coord.y;
@@ -52,7 +52,7 @@ class GameView{
   }
 
   updateSnakeHead() {
-    $l(`.snake-head`).removeClass('snake-head');
+    $w(`.snake-head`).removeClass('snake-head');
     let coord = this.board.snake.segments[this.board.snake.segments.length-1];
     if (coord) {
       let flatCoord = coord.x * this.board.dimension + coord.y;

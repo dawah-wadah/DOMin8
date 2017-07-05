@@ -1,13 +1,13 @@
-import $l from '../lib/main.js';
+const $w = require("../lib/main.js");
 import GameView from './game_view';
 
 document.addEventListener('DOMContentLoaded', () => {
-  $l('.new-game').removeClass('hidden');
-  const rootEl = $l('.grid');
+  $w('.new-game').removeClass('hidden');
+  const rootEl = $w('.grid');
   const view = new GameView(rootEl);
-  $l('.new-game').on('click', () => {
+  $w('.new-game').on('click', () => {
     view.gameInterval = setInterval( view.step.bind(view), 100);
 
-    $l('.new-game').addClass('hidden');
+    $w('.new-game').addClass('hidden');
   });
 });

@@ -2,16 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>This is my Title</title>
-    <script src="https://ajax.googleapis.com/ajax/jquery_lites/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./lib/jquery_lite.js"></script>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/snake.css" />
+    <link href="./assets/favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
-    <ul>
-    <li class='carmen'>This is for Carmen</li>
-    <li class='julian'>And this is for that backstabber Julian Cadenas</li>
-    <li class='mike'>And this is for Mike Boan who keeps telling me to delete my facebook button</li>
-    <li class='me'>And this is for me</li>
-  </ul>
+    <br>
+    <h1>Kept You Waiting Huh</h1>
+    <figure class="grid"></figure>
+    <div class="game-over hidden">
+      Game Over
+      <br>
+      Start A New Game
+    </div>
+    <div class="new-game hidden">New Game</div>
+    <div class="score"></div>
+    <div class="high-score"></div>
+    <br>
+    <div class="directions">
+      Use the arrow keys to guide the snake to the red square.
+      <br>
+      Avoid colliding with walls or yourself
+    </div>
+    <div id="footer">
+      <div id="footer-left">
+        <div id="name">Wadah Adlan</div>
+      </div>
+      <div id="footer-right">
+        <a href="https://github.com/dawah-wadah">Github</a>
+      </div>
+    </div>
   </body>
+  <script type="text/javascript" src="./bundle.js">  </script>
 </html>
