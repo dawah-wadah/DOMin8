@@ -87,8 +87,6 @@ class GameView{
   }
 
   renderGameOver() {
-    const openPlayer = new Audio('assets/efx/metalgeargameov5235.mp3');
-    openPlayer.play();
     const closePlayer = new Audio('assets/efx/0x57.wav');
     this.gameOverEl.removeClass('hidden');
     this.gameOverEl.on('click', () => {
@@ -96,8 +94,6 @@ class GameView{
       this.board = new Board(Math.max(this.board.score, this.board.highScore));
       window.clearInterval(this.gameInterval);
       this.gameInterval = window.setInterval( this.step.bind(this), 100);
-      openPlayer.pause();
-      openPlayer.currentTime = 0;
       closePlayer.play();
     });
   }
