@@ -1,6 +1,7 @@
 # DOMin8
 
-Live Link [here] (index.html)
+* [Live Link][link]
+[link]: ./index.html
 
 ## Background
 
