@@ -1,7 +1,7 @@
 # DOMin8
 
-* [Live Link][link]
-[link]: ./index.html
+* [Live Link](https://dawah-wadah.github.io/DOMin8/)
+
 
 ## Background
 
