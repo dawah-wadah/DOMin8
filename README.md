@@ -25,25 +25,25 @@ With DOMin8, you can perform some basic DOM manipulation functions:
 You can select specific HTML elements or selectors:
 
 ``` javascript
-$p('li')
-// select all li elements
+$w('li')
+// selects all li elements
 
-$p('.header')
-// select elements with 'header class
+$w('.header')
+// selects elements with 'header class
 ```
 
 You can also change the innerHTML of the selected elements:
 
 ``` javascript
-$p('li').html('yippee')
+$w('li').html('hello')
 // select li elements and change innerHTML to 'yippee'
 ```
 
-You can implement event handlers...
+You can utilize event handlers...
 
 ``` javascript
-$p('.button').on('click', () => {
-  console.log('Clicking button class now');
+$w('.button').on('click', () => {
+  console.log("Hey I'm being clicked");
 })
 // clicking anything with the button class will log the above message
 ```
@@ -52,7 +52,7 @@ You can also perform an AJAX request...
 
 ``` javascript
 // fetches weather information
-$p.ajax({
+$w.ajax({
   method: "GET",
   url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=bcb83c4b54aee8418983c2aff3073b3b",
   success(data) {
@@ -60,7 +60,7 @@ $p.ajax({
     console.log(data);
   },
   error() {
-    console.error("An error has occured with your request.");
+    console.error("An error has occurred with your request.");
   }
 })
 ```
